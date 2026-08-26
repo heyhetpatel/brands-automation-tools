@@ -10,10 +10,25 @@ Open-source tools and workflow examples for fashion and e-commerce brands.
 - Website development helpers
 - Reusable tools for fashion brands
 
-## Status
+## Shopify Product Validator
 
-This project is under active development. More reusable tools, workflow examples, and documentation will be added over time.
+The Shopify Product Validator checks common product data before it is used in Shopify or an automation workflow.
 
-## Contributions
+### Usage
 
-Contributions, suggestions, and improvements are welcome.
+```javascript
+const { validateProduct } = require("./tools/shopify-product-validator");
+
+const product = {
+  title: "Oversized Cotton T-Shirt",
+  handle: "oversized-cotton-t-shirt",
+  price: 999,
+  inventory: 25,
+  images: [
+    "https://example.com/product-image.jpg"
+  ]
+};
+
+const result = validateProduct(product);
+
+console.log(result);
